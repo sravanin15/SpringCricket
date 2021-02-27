@@ -8,12 +8,12 @@ pipeline{
   stages {
       stage("validate"){
           steps{
-              sh 'mvn  clean validate'
+              sh 'mvn -f Challenge2 clean validate'
           }
       }
        stage("compile"){
           steps{
-              sh 'mvn   compile'
+              sh 'mvn  -f Challenge2 compile'
           }
       }
        stage("Build & SonarQube analysis") {
@@ -21,7 +21,7 @@ pipeline{
             steps {
               withSonarQubeEnv('sonarserver') {
                 sh 'java -version'
-                sh 'mvn  sonar:sonar'
+                sh 'mvn -f Challenge2 sonar:sonar'
               }
             }
           }
@@ -32,12 +32,12 @@ pipeline{
         }
        stage("test"){
           steps{
-              sh 'mvn test '
+              sh 'mvn -f Challenge2 test '
           }
       }
        stage("package"){
           steps{
-              sh 'mvn package '
+              sh 'mvn -f Challenge2 package '
           }
       }
      
@@ -48,7 +48,7 @@ pipeline{
          spec :'''{
            "files" :[
            {
-           "pattern":"target/*.jar",
+           "pattern":"Challenge2/target/*.jar",
            "target":"art-doc-dev-loc"
            }
            ]

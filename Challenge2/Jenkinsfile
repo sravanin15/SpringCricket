@@ -33,7 +33,7 @@ pipeline{
        
        stage("package"){
           steps{
-              sh 'mvn -f Challenge2 package '
+              sh 'mvn -f Challenge2  -B -DskipTests package '
           }
       }
      

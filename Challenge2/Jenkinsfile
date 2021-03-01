@@ -8,7 +8,7 @@ pipeline{
   stages {
       stage("validate"){
           steps{
-              sh 'mvn -f Challenge2 clean validate'
+              sh 'mvn -f Challenge2 -B -DskipTests clean validate'
           }
       }
        stage("compile"){

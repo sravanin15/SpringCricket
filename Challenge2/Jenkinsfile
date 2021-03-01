@@ -70,7 +70,7 @@ pipeline{
                     sh 'scp -r /var/jenkins_home/workspace/springCricketpipeline/Challenge2/target/*.jar ubuntu@35.154.165.223:/home/ubuntu/artifacts'
            }
          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '5b4251f5-3bb4-46e4-a8ba-eba58d5a83d9', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-            s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true,file:'var/jenkins_home/workspace/springCricketpipeline/Challenge2/target/Challenge2-0.0.1-SNAPSHOT.jar', bucket:'artifactss3bucket', path:'Challenge2-0.0.1-SNAPSHOT.jar')
+            s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true,file:'Challenge2/target/Challenge2-0.0.1-SNAPSHOT.jar', bucket:'artifactss3bucket', path:'Challenge2-0.0.1-SNAPSHOT.jar')
        
          }
          }

@@ -30,11 +30,7 @@ pipeline{
                 waitForQualityGate abortPipeline: true
             }
         }
-       stage("test"){
-          steps{
-              sh 'mvn -f Challenge2 test '
-          }
-      }
+       
        stage("package"){
           steps{
               sh 'mvn -f Challenge2 package '

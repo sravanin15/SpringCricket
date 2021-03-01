@@ -9,7 +9,14 @@ pipeline{
          jdk 'jdk'
 
   }
+     
   stages {
+       stage('Git checkout')
+       {
+            steps{
+                 git 'https://github.com/sravanin15/SpringCricket.git'
+            }
+       }
       stage("validate"){
           steps{
               sh 'mvn -f Challenge2 -B -DskipTests clean validate'

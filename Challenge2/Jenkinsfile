@@ -37,7 +37,7 @@ pipeline{
        
        stage("package"){
           steps{
-               sh 'mvn -f Challenge2  -B -DskipTests package -Dbuild.number=-${BUILD_NUMBER} '
+               sh 'mvn -f Challenge2  -B -DskipTests package '
           }
       }
      

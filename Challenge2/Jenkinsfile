@@ -2,8 +2,8 @@ pipeline{
      agent any
     environment
      {
-          AWS_REGION='ap-south-1a'
-          AWS_DEFAULT_REGION='ap-south-1a'
+          AWS_REGION='Asia Pacific (Mumbai) ap-south-1'
+          AWS_DEFAULT_REGION='Asia Pacific (Mumbai) ap-south-1'
      }
      tools{
          maven 'maven'

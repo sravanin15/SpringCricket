@@ -3,7 +3,7 @@ pipeline{
     environment
      {
           AWS_REGION='Asia Pacific (Mumbai) ap-south-1'
-          AWS_DEFAULT_REGION='Asia Pacific (Mumbai) ap-south-1'
+          AWS_DEFAULT_REGION='us-west-2'
      }
      tools{
          maven 'maven'
